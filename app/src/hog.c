@@ -314,7 +314,8 @@ int zmk_hog_send_consumer_report(struct zmk_hid_consumer_report_body *report) {
     return 0;
 };
 
-K_MSGQ_DEFINE(zmk_hog_mouse_msgq, sizeof(struct zmk_hid_mouse_report_body),
+
+K_MSGQ_DEFINE(zmk_hog_mouse_msgq, sizeof(struct zmk_hid_mouse_report_body),    
               CONFIG_ZMK_BLE_MOUSE_REPORT_QUEUE_SIZE, 4);
 
 void send_mouse_report_callback(struct k_work *work) {
